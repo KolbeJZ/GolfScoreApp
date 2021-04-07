@@ -186,8 +186,24 @@ function updateScore(playerNum, value, holeNum, myId) {
         compareToPar(playerNum, finalTotal);
     }
 }
-// add messages, and compare to par
+function compareToPar(playerNum, playerTotal) {
+    $('.scoreMessageContainer').css('display', 'flex');
+    let holePar = Number($('#totalPar').text());
+    let comparePar = playerTotal - holePar;
 
+    if(comparePar == 0) {
+        $(`#scoreModal${playerNum}`).css('display', 'flex');
+        $(`#scoreModal${playerNum}`).html(`<div id="scoreMessage${playerNum}">Right On Par ${nameArray[playerNum-1]}! <br> Score: ${comparePar}</div>`);
+    }
+    else if(comparePar < 0) {
+        $(`#scoreModal${playerNum}`).css('display', 'flex');
+        $(`#scoreModal${playerNum}`).html(`<div id="scoreMessage${playerNum}">Great Job ${nameArray[playerNum-1]}! <br> Score: ${comparePar}</div>`);
+    }
+    else {
+        $(`#scoreModal${playerNum}`).css('display', 'flex');
+        $(`#scoreModal${playerNum}`).html(`<div id="scoreMessage${playerNum}">Next Time ${nameArray[playerNum-1]}! <br> Score: +${comparePar}</div>`);
+    }
+}
 function calcOut(rowName) {
     let outTotal = 0;
     let outTemp = 0;
