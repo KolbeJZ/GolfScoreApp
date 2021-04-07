@@ -197,11 +197,11 @@ function compareToPar(playerNum, playerTotal) {
     }
     else if(comparePar < 0) {
         $(`#scoreModal${playerNum}`).css('display', 'flex');
-        $(`#scoreModal${playerNum}`).html(`<div id="scoreMessage${playerNum}">Great Job ${nameArray[playerNum-1]}! <br> Score: ${comparePar}</div>`);
+        $(`#scoreModal${playerNum}`).html(`<div id="scoreMessage${playerNum}">On to the PGA ${nameArray[playerNum-1]}! <br> Score: ${comparePar}</div>`);
     }
     else {
         $(`#scoreModal${playerNum}`).css('display', 'flex');
-        $(`#scoreModal${playerNum}`).html(`<div id="scoreMessage${playerNum}">Next Time ${nameArray[playerNum-1]}! <br> Score: +${comparePar}</div>`);
+        $(`#scoreModal${playerNum}`).html(`<div id="scoreMessage${playerNum}"> Better Luck Next Time ${nameArray[playerNum-1]}! <br> Score: +${comparePar}</div>`);
     }
 }
 function calcOut(rowName) {
