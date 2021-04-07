@@ -188,9 +188,32 @@ function updateScore(playerNum, value, holeNum, myId) {
 }
 // add messages, and compare to par
 
+function calcOut(rowName) {
+    let outTotal = 0;
+    let outTemp = 0;
+    for(let i = 0; i < 9; i++) {
+        outTemp = Number($(`#${rowName}${i}`).text());
+        outTotal += outTemp;
+    }
+    return outTotal;
+}
 
-// add calcOut and calcIn and calcTotal
+function calcIn(rowName) {
+    let inTotal = 0;
+    let inTemp = 0;
+    for(let i = 9; i < 18; i++) {
+        inTemp = Number($(`#${rowName}${i}`).text());
+        inTotal += inTemp;
+    }
+    return inTotal;
+}
 
+function calcTotal(rowName) {
+    let outTotal = Number($(`#out${rowName}`).text());
+    let inTotal = Number($(`#in${rowName}`).text());
+
+    return outTotal + inTotal;
+}
 
 function getNames(playerNum) {
     numPlayers = Number(playerNum);
